@@ -1,0 +1,3192 @@
+mysql chapter
+
+
+to change ip address in php from ::1 to ip
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+	mysqli_connect('localhost', 'root', '');
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+
+	$host = 'localhost';
+	$user = 'root';
+	$pass = '';
+
+	@mysqli_connect($host, $user, $pass) or die('cound not connect');
+	echo 'Connected to the server';
+	
+	mysqli_select_db(@mysqli_connect($host, $user, $pass), 'a_database') or die('Could not connect!');
+
+	echo 'Connected to the db';
+	
+?>
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+
+	$host = 'localhost';
+	$user = 'root';
+	$pass = '';
+	$dbname = 'a_database';
+	
+	if($mycon = @mysqli_connect($host, $user, $pass)){
+		
+		echo 'Connected to the server';
+	
+	if(mysqli_select_db($mycon, $dbname)){
+		
+		echo 'Connected to the db';
+	}else{
+		echo 'DB connection failed';
+	}
+	
+	
+}else{
+
+	echo 'Connection failed';
+}
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+index.php
+
+<?php
+
+	require 'dbconnect.php';
+	
+	$querry = 'SELECT `firstname`, `surname` FROM `users` ORDER BY `id` DESC';
+	
+	if($query_run = @mysqli_query($mycon, $querry)){
+		
+		while($row = mysqli_fetch_assoc($query_run)){
+			
+			$fname = $row['firstname'];
+			$sname = $row['surname'];
+			
+			echo $fname.' '.$sname.'<br><br>';
+		}
+		
+	}else{
+		echo 'failed';
+	}
+
+?>
+
+
+....................................
+
+dbconnect.php
+
+<?php
+
+	$host = 'localhost';
+	$user = 'root';
+	$pass = '';
+	$dbname = 'a_database';
+	
+	if($mycon = @mysqli_connect($host, $user, $pass)){
+		
+		//echo 'Connected to the server';
+	
+	if(mysqli_select_db($mycon, $dbname)){
+		
+		//echo 'Connected to the db';
+	}else{
+		echo 'DB connection failed';
+	}
+	
+	
+}else{
+
+	echo 'Connection failed';
+}
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+index.php
+
+<?php
+
+	require 'dbconnect.php';
+	
+	$querry = 'SELECT `firstname`, `surname` FROM `users` WHERE `id`=3 ORDER BY `id` ';
+	
+	if($query_run = @mysqli_query($mycon, $querry)){
+		
+		while($row = mysqli_fetch_assoc($query_run)){
+			
+			$fname = $row['firstname'];
+			$sname = $row['surname'];
+			s
+			echo $fname.' '.$sname.'<br><br>';
+		}
+		
+	}else{
+		echo 'failed';
+	}
+
+?>
+.................................
+
+dbconnect.php
+
+<?php
+
+	$host = 'localhost';
+	$user = 'root';
+	$pass = '';
+	$dbname = 'a_database';
+	
+	if($mycon = @mysqli_connect($host, $user, $pass)){
+		
+		//echo 'Connected to the server';
+	
+	if(mysqli_select_db($mycon, $dbname)){
+		
+		//echo 'Connected to the db';
+	}else{
+		echo 'DB connection failed';
+	}
+	
+	
+}else{
+
+	echo 'Connection failed';
+}
+
+?>
+
+/////you can take `id`<3
+/////you can take `id`<=3
+/////you can take `id`>5
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+index.php
+
+<?php
+
+	require 'dbconnect.php';
+	
+	$querry = 'SELECT `firstname`, `surname` FROM `users` WHERE `id`>5 ORDER BY `id` ';
+	
+	if($query_run = @mysqli_query($mycon, $querry)){
+		
+		if(mysqli_num_rows($query_run)!=NULL){
+		
+		while($row = mysqli_fetch_assoc($query_run)){
+			
+			$fname = $row['firstname'];
+			$sname = $row['surname'];
+			
+			echo $fname.' '.$sname.'<br><br>';
+		}
+		
+		}else {
+			echo 'NO USERS FOUND';
+		}
+		
+	}else{
+		echo 'failed';
+	}
+
+?>
+.................................
+
+dbconnect.php
+
+<?php
+
+	$host = 'localhost';
+	$user = 'root';
+	$pass = '';
+	$dbname = 'a_database';
+	
+	if($mycon = @mysqli_connect($host, $user, $pass)){
+		
+		//echo 'Connected to the server';
+	
+	if(mysqli_select_db($mycon, $dbname)){
+		
+		//echo 'Connected to the db';
+	}else{
+		echo 'DB connection failed';
+	}
+	
+	
+}else{
+
+	echo 'Connection failed';
+}
+
+?>
+
+//YOU CAN USE DESC / ASC
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+
+	require 'dbconnect.php';
+	
+	$querry = 'SELECT `firstname`, `surname` FROM `users` WHERE `id`>5 ORDER BY `id` ';
+	
+	if($query_run = @mysqli_query($mycon, $querry)){
+		
+		if(mysqli_num_rows($query_run)!=NULL){
+		
+		while($row = mysqli_fetch_assoc($query_run)){
+			
+			$fname = $row['firstname'];
+			$sname = $row['surname'];
+			
+			echo $fname.' '.$sname.'<br><br>';
+		}
+		
+		}else {
+			echo 'NO USERS FOUND';
+		}
+		
+	}else{
+		echo 'failed';
+	}
+
+?>
+
+.................................
+
+dbconnect.php
+
+<?php
+
+	$host = 'localhost';
+	$user = 'root';
+	$pass = '';
+	$dbname = 'a_database';
+	
+	if($mycon = @mysqli_connect($host, $user, $pass)){
+		
+		//echo 'Connected to the server';
+	
+	if(mysqli_select_db($mycon, $dbname)){
+		
+		//echo 'Connected to the db';
+	}else{
+		echo 'DB connection failed';
+	}
+	
+	
+}else{
+
+	echo 'Connection failed';
+}
+
+?>
+
+1.22
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+index.php
+
+<?php
+	require 'dbconnect.php';
+	
+
+?>
+
+<form action="index.php" method="GET">
+	Select:<select name="fv">
+			<option value="f">Fruits</option>
+			<option value="v">Vegetable</option>
+		</select>
+		<input type="submit" value="Submit">
+
+</form>
+
+<?php
+
+	if(isset($_GET['fv'])){
+		
+		$fv = $_GET['fv'];
+		
+		if($fv == 'f'){
+			echo '<h4>fruits :</h4>';
+		}else{
+			echo '<h4>Vegetables :</h4>';
+		}
+		
+		$query = "SELECT `name` FROM `foods` WHERE `type`='$fv'";
+			
+			if($query_run = mysqli_query($mycon, $query)){
+				
+				while($row = mysqli_fetch_assoc($query_run)){
+					
+					$name = $row['name'];
+					echo $name.'<br><br>';
+				}
+				
+				
+			}else{
+				echo 'Failed';
+			}
+	}
+?>
+
+.......................................
+
+dbconnect.php
+
+<?php
+	
+	$host = 'localhost';
+	$user = 'root';
+	$pass = '';
+	$dbname = 'a_database';
+	
+	if($mycon = @mysqli_connect($host, $user,$pass)){
+		if(@mysqli_select_db($mycon, $dbname)){
+			
+		}else{
+			echo 'Could not connect to the db';
+		}
+		
+	}else {
+		echo 'Could not connect to the server';
+	}
+	
+?>
+1.55
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+index.php
+
+<?php
+	require 'dbconnect.php';
+	
+	$user_ip = $_SERVER['REMOTE_ADDR'];
+	
+	
+	
+	function ip_exists($ip){
+		global $mycon;
+		$querry = "SELECT `ip` FROM `hits_ip` ";
+		
+		if($querry_run = mysqli_query($mycon, $querry)){
+			
+			$num_rows = mysqli_num_rows($querry_run);
+			if($num_rows == 0){
+				return false;
+			}else{
+				while($row = mysqli_fetch_array($querry_run)){
+					$e_ip = $row['ip'];
+					if($ip == $e_ip){
+						return true;
+					}
+				}
+			}
+		}
+		
+	}
+	
+	
+	
+	function add_ip($ip){
+		global $mycon;
+		$query = "INSERT INTO `hits_ip` (`id`, `ip`) VALUES(NULL, '$ip')";
+		mysqli_query($mycon, $query);
+		
+	}
+	
+	
+	
+	
+
+	function update_count(){
+		
+		global $mycon;
+		
+		$querry = "SELECT `hits` FROM `hits_count` WHERE `id`=0";
+		
+		if($querry_run = mysqli_query($mycon, $querry)){
+			
+			$result = mysqli_fetch_row($querry_run);
+			$current_hits = $result[0];
+			$hits_inc = $current_hits + 1;
+			
+			$update_querry = "UPDATE `hits_count` SET `hits` = $hits_inc WHERE `id`=0";
+			mysqli_query($mycon, $update_querry);
+		
+		}
+	}
+	
+	if(!ip_exists($user_ip)){
+		update_count();
+		add_ip($user_ip);
+		
+	}
+
+?>
+.............................................
+dbconnect.php
+
+<?php
+	
+	$host = 'localhost';
+	$user = 'root';
+	$pass = '';
+	$dbname = 'a_database';
+	
+	if($mycon = @mysqli_connect($host, $user,$pass)){
+		if(@mysqli_select_db($mycon, $dbname)){
+			//echo 'connected to db';
+		}else{
+			//echo 'Could not connect to the db';
+		}
+		
+	}else {
+		//echo 'Could not connect to the server';
+	}
+	
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+index.php
+
+<?php
+	require 'dbconnect.php';
+	
+
+?>
+
+<form action = "index.php" method = "POST">
+
+	Search : <input type = "text" name="s_text" >
+	<input type = "submit" value = "Search">
+	
+
+</form>
+
+<?php
+
+	if(isset($_POST['s_text'])){
+		$s_text = $_POST['s_text'];
+		
+		if(!empty($s_text)){
+			$querry = "SELECT `name` FROM `foods` WHERE `name` LIKE '%$s_text%'";
+			$querry_run = mysqli_query($mycon, $querry);
+			$num_rows = mysqli_num_rows($querry_run);
+			
+			if($num_rows >= 1){
+				
+				echo '<h4>'.$num_rows.' results found : </h4>';
+				
+				while($row = mysqli_fetch_assoc($querry_run)){
+					echo $row['name'].'<br><br>';
+				}
+				
+			}else{
+				echo 'No results found';
+			}
+				
+		}
+		
+	}
+
+?>
+.................................
+
+dbconnect.php
+
+<?php
+	
+	$host = 'localhost';
+	$user = 'root';
+	$pass = '';
+	$dbname = 'a_database';
+	
+	if($mycon = @mysqli_connect($host, $user,$pass)){
+		if(@mysqli_select_db($mycon, $dbname)){
+			//echo 'connected to db';
+		}else{
+			//echo 'Could not connect to the db';
+		}
+		
+	}else {
+		//echo 'Could not connect to the server';
+	}
+	
+?>
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+3.23
+
+index.php
+
+<?php
+	require 'core.php';
+	require 'dbconnect.php';
+
+	
+	
+	if(loggedin()){
+		
+		echo 'You are logged in';
+		
+		
+	}else{
+		include 'loginform.php';
+	}
+	
+	
+?>
+.........................................
+
+dbconnect.php
+
+<?php
+	
+	$host = 'localhost';
+	$user = 'root';
+	$pass = '';
+	$dbname = 'a_database';
+	
+	if($mycon = @mysqli_connect($host, $user, $pass)){
+		
+		if(!mysqli_select_db($mycon, $dbname)){
+			
+			echo 'could not connect to the db';
+		}
+		
+		
+	}else {
+		
+			echo 'could not connect';
+	}
+?>
+.....................................
+
+loginform.php
+
+<?php
+	
+	if(isset($_POST['username']) && isset($_POST['password'])){
+		
+		$username = $_POST['username'];
+		$password = $_POST['password'];
+		$pass_hass = md5($password);
+		
+		if(!empty($username) && !empty($password)){
+			
+			$query = "SELECT `id` FROM `users4` WHERE `username`= '$username' AND `password`='$pass_hass' ";
+			
+			if($query_run = mysqli_query($mycon, $query)){
+				$nom_rows = mysqli_num_rows($query_run);
+				
+				if($nom_rows == 0){
+					echo 'INVALID USERNAME OR PASSWORD';
+				}else if($nom_rows == 1){
+					$row = mysqli_fetch_row($query_run);
+					$id = $row[0];
+					$_SESSION['user_id'] = $id;
+					header('Location: index.php');
+				}
+			}
+			
+		}else {
+			echo 'Enter all the details';
+		}
+	}
+	
+
+?>
+
+<form action = "<?php echo $current_file ?>" method = "POST">
+	USER NAME : <input type = "text" name = "username"><br><br>
+	PASSWORD : 	<input type = "password" name = "password"><br><br>
+				<input type = "submit" value = "LOGIN">
+
+</form>
+........................................
+
+core.php
+
+<?php
+	ob_start();
+	session_start();
+	$current_file = $_SERVER['SCRIPT_NAME'];
+
+	function loggedin(){
+		
+		if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])){
+			return true;
+		}else{
+			return false;
+		}
+	}
+?>
+..........................................
+
+4.17
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+index.php
+
+<?php
+	require 'core.php';
+	require 'dbconnect.php';
+
+	$logout_txt = '<a href ="logout.php">Logout</a>';
+	
+	if(loggedin()){
+		
+		echo 'You are logged in'.$logout_txt;
+		
+		
+	}else{
+		include 'loginform.php';
+	}
+	
+	
+?>
+.......................................
+
+dbconnect.php
+
+<?php
+	
+	$host = 'localhost';
+	$user = 'root';
+	$pass = '';
+	$dbname = 'a_database';
+	
+	if($mycon = @mysqli_connect($host, $user, $pass)){
+		
+		if(!mysqli_select_db($mycon, $dbname)){
+			
+			echo 'could not connect to the db';
+		}
+		
+		
+	}else {
+		
+			echo 'could not connect';
+	}
+?>
+.................................
+
+loginform.php
+
+<?php
+	
+	if(isset($_POST['username']) && isset($_POST['password'])){
+		
+		$username = $_POST['username'];
+		$password = $_POST['password'];
+		$pass_hass = md5($password);
+		
+		if(!empty($username) && !empty($password)){
+			
+			$query = "SELECT `id` FROM `users4` WHERE `username`= '$username' AND `password`='$pass_hass' ";
+			
+			if($query_run = mysqli_query($mycon, $query)){
+				$nom_rows = mysqli_num_rows($query_run);
+				
+				if($nom_rows == 0){
+					echo 'INVALID USERNAME OR PASSWORD';
+				}else if($nom_rows == 1){
+					$row = mysqli_fetch_row($query_run);
+					$id = $row[0];
+					$_SESSION['user_id'] = $id;
+					header('Location: index.php');
+				}
+			}
+			
+		}else {
+			echo 'Enter all the details';
+		}
+	}
+	
+
+?>
+
+<form action = "<?php echo $current_file ?>" method = "POST">
+	USER NAME : <input type = "text" name = "username"><br><br>
+	PASSWORD : 	<input type = "password" name = "password"><br><br>
+				<input type = "submit" value = "LOGIN">
+
+</form>
+
+....................................
+
+core.php
+
+<?php
+	ob_start();
+	session_start();
+	$current_file = $_SERVER['SCRIPT_NAME'];
+
+	function loggedin(){
+		
+		if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])){
+			return true;
+		}else{
+			return false;
+		}
+	}
+?>
+....................................
+
+logout.php
+
+<?php
+	
+		require 'core.php';
+		session_destroy();
+		header('Location: index.php');
+
+?>
+
+..................................
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+index.php
+
+<?php
+	require 'core.php';
+	require 'dbconnect.php';
+
+	$logout_txt = '<a href ="logout.php">Logout</a>';
+	
+	if(loggedin()){
+		
+		$firstname = getuserfield('firstname');
+		$surname = getuserfield('surname');
+		
+		echo '<br>Welcom, '.$firstname.' '.$surname.' '.$logout_txt;
+		
+		
+	}else{
+		include 'loginform.php';
+	}
+	
+	
+?>
+........................................
+
+dbconnect.php
+
+<?php
+	
+	$host = 'localhost';
+	$user = 'root';
+	$pass = '';
+	$dbname = 'a_database';
+	
+	if($mycon = @mysqli_connect($host, $user, $pass)){
+		
+		if(!mysqli_select_db($mycon, $dbname)){
+			
+			echo 'could not connect to the db';
+		}
+		
+		
+	}else {
+		
+			echo 'could not connect';
+	}
+?>
+..............................
+
+loginform.php
+
+<?php
+	
+	if(isset($_POST['username']) && isset($_POST['password'])){
+		
+		$username = $_POST['username'];
+		$password = $_POST['password'];
+		$pass_hass = md5($password);
+		
+		if(!empty($username) && !empty($password)){
+			
+			$query = "SELECT `id` FROM `users4` WHERE `username`= '$username' AND `password`='$pass_hass' ";
+			
+			if($query_run = mysqli_query($mycon, $query)){
+				$nom_rows = mysqli_num_rows($query_run);
+				
+				if($nom_rows == 0){
+					echo 'INVALID USERNAME OR PASSWORD';
+				}else if($nom_rows == 1){
+					$row = mysqli_fetch_row($query_run);
+					$id = $row[0];
+					$_SESSION['user_id'] = $id;
+					header('Location: index.php');
+				}
+			}
+			
+		}else {
+			echo 'Enter all the details';
+		}
+	}
+	
+
+?>
+
+<form action = "<?php echo $current_file ?>" method = "POST">
+	USER NAME : <input type = "text" name = "username"><br><br>
+	PASSWORD : 	<input type = "password" name = "password"><br><br>
+				<input type = "submit" value = "LOGIN">
+
+</form>
+.......................................
+
+core.php
+
+<?php
+	ob_start();
+	session_start();
+	$current_file = $_SERVER['SCRIPT_NAME'];
+
+	function loggedin(){
+		
+		if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	function getuserfield($field){
+		global $mycon;
+		$id = $_SESSION['user_id'];
+		$qurery = "SELECT `$field` FROM `users4` WHERE `id`= $id";
+		
+		if($query_run = mysqli_query($mycon, $qurery)){
+			$num_row = mysqli_num_rows($query_run);
+			
+			if($num_row == 1){
+				
+				$row = mysqli_fetch_row($query_run);
+				return $row[0];
+			}
+			
+			
+		}
+		
+	}
+	
+?>
+
+........................................
+
+logout.php
+
+<?php
+	
+		require 'core.php';
+		session_destroy();
+		header('Location: index.php');
+
+?>
+........................................
+
+4.37
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+index.php
+
+<?php
+	require 'core.php';
+	require 'dbconnect.php';
+
+	$logout_txt = '<a href ="logout.php">Logout</a>';
+	
+	if(loggedin()){
+		
+		$firstname = getuserfield('firstname');
+		$surname = getuserfield('surname');
+		
+		echo '<br>Welcom, '.$firstname.' '.$surname.' '.$logout_txt;
+		
+		
+	}else{
+		include 'loginform.php';
+	}
+	
+	
+?>
+
+.......................................
+
+dbconnect.php
+
+<?php
+	
+	$host = 'localhost';
+	$user = 'root';
+	$pass = '';
+	$dbname = 'a_database';
+	
+	if($mycon = @mysqli_connect($host, $user, $pass)){
+		
+		if(!mysqli_select_db($mycon, $dbname)){
+			
+			echo 'could not connect to the db';
+		}
+		
+		
+	}else {
+		
+			echo 'could not connect';
+	}
+?>
+..............................................
+
+loginform.php
+
+<?php
+	
+	if(isset($_POST['username']) && isset($_POST['password'])){
+		
+		$username = $_POST['username'];
+		$password = $_POST['password'];
+		$pass_hass = md5($password);
+		
+		if(!empty($username) && !empty($password)){
+			
+			$query = "SELECT `id` FROM `users4` WHERE `username`= '$username' AND `password`='$pass_hass' ";
+			
+			if($query_run = mysqli_query($mycon, $query)){
+				$nom_rows = mysqli_num_rows($query_run);
+				
+				if($nom_rows == 0){
+					echo 'INVALID USERNAME OR PASSWORD';
+				}else if($nom_rows == 1){
+					$row = mysqli_fetch_row($query_run);
+					$id = $row[0];
+					$_SESSION['user_id'] = $id;
+					header('Location: index.php');
+				}
+			}
+			
+		}else {
+			echo 'Enter all the details';
+		}
+	}
+	
+
+?>
+
+<form action = "<?php echo $current_file ?>" method = "POST">
+	USER NAME : <input type = "text" name = "username"><br><br>
+	PASSWORD : 	<input type = "password" name = "password"><br><br>
+				<input type = "submit" value = "LOGIN">
+
+</form>
+
+.......................................
+
+core.php
+
+
+<?php
+	ob_start();
+	session_start();
+	$current_file = $_SERVER['SCRIPT_NAME'];
+
+	function loggedin(){
+		
+		if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	function getuserfield($field){
+		global $mycon;
+		$id = $_SESSION['user_id'];
+		$qurery = "SELECT `$field` FROM `users4` WHERE `id`= $id";
+		
+		if($query_run = mysqli_query($mycon, $qurery)){
+			$num_row = mysqli_num_rows($query_run);
+			
+			if($num_row == 1){
+				
+				$row = mysqli_fetch_row($query_run);
+				return $row[0];
+			}
+			
+			
+		}
+		
+	}
+	
+?>
+
+...........................................
+
+logout.php
+
+<?php
+	
+		require 'core.php';
+		session_destroy();
+		header('Location: index.php');
+
+?>
+
+.......................................
+
+register.php
+
+<?php
+	require 'core.php';
+	require 'dbconnect.php';
+	
+	if(loggedin()){
+		echo 'You are already registered and logged in';
+	}else if(!loggedin()){
+		
+		if(isset($_POST['username']) && isset($_POST['password'])&& isset($_POST['pass_again'])&& isset($_POST['firstname'])&& isset($_POST['surname'])){
+			
+			$username = $_POST['username'];
+			$password = $_POST['password'];
+			$pass_again = $_POST['pass_again'];
+			$firstname = $_POST['firstname'];
+			$surname = $_POST['surname'];
+			
+			$pass_hash = md5($password);
+			
+			if(!empty($username) && !empty($password) && !empty($pass_again) && !empty($firstname) && !empty($surname)){
+				
+				if($password != $pass_again){
+					echo 'Password do not match';
+				}else{
+				
+				$querry = "SELECT `username` FROM `users4` WHERE `username`='$username'";
+				
+				if($query_run = mysqli_query($mycon, $querry)){
+					
+					$num_row = mysqli_num_rows($query_run);
+					if($num_row == 1){
+						echo 'Username already exists';
+					}else if($num_row == 0){
+						
+						$query = "INSERT INTO `users4`(`id`,`username`,`password`,`firstname`,`surname`) VALUES(NULL, '$username','$pass_hash','$firstname','$surname')";
+						
+						if($query_run = mysqli_query($mycon, $query)){
+							header('Location: success.php');
+						}
+					}
+					
+				}
+				}
+				
+			}else{
+				echo 'All fields are requred';
+			}
+		}
+?>
+
+	<h2>Sign up</h2>
+	<form action="register.php" method = "POST">
+		Username:<br> <input type="text" name="username"><br><br>
+		Password:<br> <input type="password" name="password"><br><br>
+		Password again: <br><input type="password" name="pass_again"><br><br>
+		Firstname:<br> <input type="text" name="firstname"><br><br>
+		Surname:<br> <input type="text" name="surname"><br><br>
+				<input type="submit" value="Sign up">
+	</form>
+
+<?php		
+		
+	}
+
+?>
+.....................................
+
+success.php
+
+<?php
+
+?>
+
+	<h3>You have registered successfully</h3>
+	
+	<a href = "index.php"><h4>Click here to login</h4></a>
+
+....................................
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+index.php
+
+<?php
+	require 'core.php';
+	require 'dbconnect.php';
+
+	$logout_txt = '<a href ="logout.php">Logout</a>';
+	
+	if(loggedin()){
+		
+		$firstname = getuserfield('firstname');
+		$surname = getuserfield('surname');
+		
+		echo '<br>Welcom, '.$firstname.' '.$surname.' '.$logout_txt;
+		
+		
+	}else{
+		include 'loginform.php';
+	}
+	
+	
+?>
+
+......................................
+
+dbconnect.php
+
+<?php
+	
+	$host = 'localhost';
+	$user = 'root';
+	$pass = '';
+	$dbname = 'a_database';
+	
+	if($mycon = @mysqli_connect($host, $user, $pass)){
+		
+		if(!mysqli_select_db($mycon, $dbname)){
+			
+			echo 'could not connect to the db';
+		}
+		
+		
+	}else {
+		
+			echo 'could not connect';
+	}
+?>
+.........................................
+
+loginform.php
+
+<?php
+	
+	if(isset($_POST['username']) && isset($_POST['password'])){
+		
+		$username = $_POST['username'];
+		$password = $_POST['password'];
+		$pass_hass = md5($password);
+		
+		if(!empty($username) && !empty($password)){
+			
+			$query = "SELECT `id` FROM `users4` WHERE `username`= '$username' AND `password`='$pass_hass' ";
+			
+			if($query_run = mysqli_query($mycon, $query)){
+				$nom_rows = mysqli_num_rows($query_run);
+				
+				if($nom_rows == 0){
+					echo 'INVALID USERNAME OR PASSWORD';
+				}else if($nom_rows == 1){
+					$row = mysqli_fetch_row($query_run);
+					$id = $row[0];
+					$_SESSION['user_id'] = $id;
+					header('Location: index.php');
+				}
+			}
+			
+		}else {
+			echo 'Enter all the details';
+		}
+	}
+	
+
+?>
+
+<form action = "<?php echo $current_file ?>" method = "POST">
+	USER NAME : <input type = "text" name = "username"><br><br>
+	PASSWORD : 	<input type = "password" name = "password"><br><br>
+				<input type = "submit" value = "LOGIN">
+
+</form>
+
+........................................
+
+core.php
+
+<?php
+	ob_start();
+	session_start();
+	$current_file = $_SERVER['SCRIPT_NAME'];
+
+	function loggedin(){
+		
+		if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	function getuserfield($field){
+		global $mycon;
+		$id = $_SESSION['user_id'];
+		$qurery = "SELECT `$field` FROM `users4` WHERE `id`= $id";
+		
+		if($query_run = mysqli_query($mycon, $qurery)){
+			$num_row = mysqli_num_rows($query_run);
+			
+			if($num_row == 1){
+				
+				$row = mysqli_fetch_row($query_run);
+				return $row[0];
+			}
+			
+			
+		}
+		
+	}
+	
+?>
+........................................
+
+logout.php
+
+<?php
+	
+		require 'core.php';
+		session_destroy();
+		header('Location: index.php');
+
+?>
+......................................
+
+register.php
+
+<?php
+	require 'core.php';
+	require 'dbconnect.php';
+	
+	if(loggedin()){
+		echo 'You are already registered and logged in';
+	}else if(!loggedin()){
+		
+		if(isset($_POST['username']) && isset($_POST['password'])&& isset($_POST['pass_again'])&& isset($_POST['firstname'])&& isset($_POST['surname'])){
+			
+			$username = $_POST['username'];
+			$password = $_POST['password'];
+			$pass_again = $_POST['pass_again'];
+			$firstname = $_POST['firstname'];
+			$surname = $_POST['surname'];
+			
+			$pass_hash = md5($password);
+			
+			if(!empty($username) && !empty($password) && !empty($pass_again) && !empty($firstname) && !empty($surname)){
+				
+				if($password != $pass_again){
+					echo 'Password do not match';
+				}else{
+				
+				$querry = "SELECT `username` FROM `users4` WHERE `username`='$username'";
+				
+				if($query_run = mysqli_query($mycon, $querry)){
+					
+					$num_row = mysqli_num_rows($query_run);
+					if($num_row == 1){
+						echo 'Username already exists';
+					}else if($num_row == 0){
+						
+						$query = "INSERT INTO `users4`(`id`,`username`,`password`,`firstname`,`surname`) VALUES(NULL, '$username','$pass_hash','$firstname','$surname')";
+						
+						if($query_run = mysqli_query($mycon, $query)){
+							header('Location: success.php');
+						}
+					}
+					
+				}
+				}
+				
+			}else{
+				echo 'All fields are requred';
+			}
+		}
+?>
+
+	<h2>Sign up</h2>
+	<form action="register.php" method = "POST">
+		Username:<br> <input type="text" name="username" value = "<?php if(isset($username)){echo $username;}?>"><br><br>
+		Password:<br> <input type="password" name="password"><br><br>
+		Password again: <br><input type="password" name="pass_again"><br><br>
+		Firstname:<br> <input type="text" name="firstname" value = "<?php if(isset($firstname)){echo $firstname;}?>"><br><br>
+		Surname:<br> <input type="text" name="surname" value = "<?php if(isset($surname)){echo $surname;}?>"><br><br>
+				<input type="submit" value="Sign up">
+	</form>
+
+<?php		
+		
+	}
+
+?>
+..........................................
+
+success.php
+
+<?php
+
+?>
+
+	<h3>You have registered successfully</h3>
+	
+	<a href = "index.php"><h4>Click here to login</h4></a>
+
+..........................................
+
+5.30
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+$username = mysqli_real_escape_string($mycon, $_POST['username']);
+
+$password = mysqli_real_escape_string($mycon, $_POST['password']);
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+6.00
+
+<?php
+	header('Content-type: image/jpeg');
+	
+	$email = 'example@mydomain.com';
+	$email_length = strlen($email);
+	$fsize = 4;
+	
+	$img_height = ImageFontHeight($fsize);
+	$img_width = ImageFontWidth($fsize) * $email_length;
+	
+	$image = imagecreate($img_width, $img_height);
+	
+	$bg = imagecolorallocate($image, 255, 255, 255);
+	$fcolor = imagecolorallocate($image, 0, 0, 0);
+	
+	imagestring($image, $fsize, 0, 0, $email, $fcolor);
+	
+	imagejpeg($image);
+	imagedestroy($image);
+
+?>
+
+
+
+...............................
+
+if any errors in gd text or images go to php file and search for gd settings;
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+<?php
+	header('Content-type: image/jpeg');
+	
+	$email = 'example@mydomain.com';
+	$email_length = strlen($email);
+	$fsize = 4;
+	
+	$img_height = ImageFontHeight($fsize)+2;
+	$img_width = ImageFontWidth($fsize) * ($email_length+2);
+	
+	$image = imagecreate($img_width, $img_height);
+	
+	$bg = imagecolorallocate($image, 255, 255, 255);
+	$fcolor = imagecolorallocate($image, 0, 0, 0);
+	
+	imagestring($image, $fsize, 7, 0, $email, $fcolor);
+	
+	imagejpeg($image);
+	imagedestroy($image);
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+gdimage.php
+
+<?php
+	header('Content-type: image/jpeg');
+	
+	$email = 'example@mydomain.com';
+	$email_length = strlen($email);
+	$fsize = 4;
+	
+	$img_height = ImageFontHeight($fsize);
+	$img_width = ImageFontWidth($fsize) * $email_length;
+	
+	$image = imagecreate($img_width, $img_height);
+	
+	$bg = imagecolorallocate($image, 255, 255, 255);
+	$fcolor = imagecolorallocate($image, 0, 0, 0);
+	
+	imagestring($image, $fsize, 0, 0, $email, $fcolor);
+	
+	imagejpeg($image);
+	imagedestroy($image);
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+<?php
+	header('Content-type: image/jpeg');
+	
+	$email = $_GET['email'];
+	$email_length = strlen($email);
+	$fsize = 4;
+	
+	$img_height = ImageFontHeight($fsize)+2;
+	$img_width = ImageFontWidth($fsize) * ($email_length+2);
+	
+	$image = imagecreate($img_width, $img_height);
+	
+	$bg = imagecolorallocate($image, 255, 255, 255);
+	$fcolor = imagecolorallocate($image, 0, 0, 0);
+	
+	imagestring($image, $fsize, 7, 0, $email, $fcolor);
+	
+	imagejpeg($image);
+	imagedestroy($image);
+
+?>
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+index.php
+
+<?php
+
+
+?>
+<img src = "gdimage.php?email=krishnagmail@domain.com">
+
+.....................................
+
+<?php
+	header('Content-type: image/jpeg');
+	
+	if(isset($_GET['email'])){
+		
+		$email = $_GET['email'];
+		
+		if(!empty($email)){
+			
+			$email_length = strlen($email);
+			$fsize = 4;
+			
+			$img_height = ImageFontHeight($fsize)+2;
+			$img_width = ImageFontWidth($fsize) * ($email_length+2);
+			
+			$image = imagecreate($img_width, $img_height);
+			
+			$bg = imagecolorallocate($image, 255, 255, 255);
+			$fcolor = imagecolorallocate($image, 0, 0, 0);
+			
+			imagestring($image, $fsize, 7, 0, $email, $fcolor);
+			
+			imagejpeg($image);
+			imagedestroy($image);
+
+		}
+	}
+	
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+index.php
+
+<?php
+
+
+?>
+<img src = "gdimage.php?email=krishnagmail@domain.com">
+
+.....................................
+
+<?php
+	header('Content-type: image/jpeg');
+	
+	if(isset($_GET['email'])){
+		
+		$email = $_GET['email'];
+		
+		if(!empty($email)){
+			
+			$email = 'no email found';
+			
+		}
+	}else {
+		$email = 'no email found';
+	}
+
+			$email_length = strlen($email);
+			$fsize = 4;
+			
+			$img_height = ImageFontHeight($fsize)+2;
+			$img_width = ImageFontWidth($fsize) * ($email_length+2);
+			
+			$image = imagecreate($img_width, $img_height);
+			
+			$bg = imagecolorallocate($image, 255, 255, 255);
+			$fcolor = imagecolorallocate($image, 0, 0, 0);
+			
+			imagestring($image, $fsize, 7, 0, $email, $fcolor);
+			
+			imagejpeg($image);
+			imagedestroy($image);
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+index.php
+
+<?php
+
+
+?>
+<img src = "gdimage.php?id=1">
+............................................
+
+gdimage.php
+
+<?php
+
+	require 'dbconnect.php';
+
+	header('Content-type: image/jpeg');
+	
+	if(isset($_GET['id'])){
+		
+		$id = $_GET['id'];
+		
+		if(!empty($id)){
+			
+		$querry = "SELECT `email` FROM `users` WHERE `id`=$id";
+		if($q_run = mysqli_query($mycon, $querry)){
+			
+			$num_rows = mysqli_num_rows($q_run);
+			
+			if($num_rows == 1){
+				$row = mysqli_fetch_row($q_run);
+				$email = $row[0];
+			}else{
+				$email = "";
+			}
+		}
+			
+		}else {
+		
+			$email = "";
+	}
+	}else {
+		$email = "";
+	}
+	
+			$email_length = strlen($email);
+			$fsize = 4;
+			
+			$img_height = ImageFontHeight($fsize)+2;
+			$img_width = ImageFontWidth($fsize) * ($email_length+2);
+			
+			$image = imagecreate($img_width, $img_height);
+			
+			$bg = imagecolorallocate($image, 255, 255, 255);
+			$fcolor = imagecolorallocate($image, 0, 0, 0);
+			
+			imagestring($image, $fsize, 7, 0, $email, $fcolor);
+			
+			imagejpeg($image);
+			imagedestroy($image);
+			
+		
+?>
+
+.....................................
+
+dbconnect.php
+
+<?php
+
+		$host = 'localhost';
+		$user = 'root';
+		$pass = '';
+		$dbname = 'a_database';
+		
+		if($mycon = @mysqli_connect($host, $user, $pass)){
+			
+			mysqli_select_db($mycon, $dbname);
+			
+			
+		}
+?>
+
+
+6.40
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+index.php
+
+<?php
+	
+	
+?>
+
+...........................................
+
+wmimage.php
+
+<?php
+
+	$im_name = 'image.jpg';
+	$wm_name = 'klogo.png';
+	
+	$im = imagecreatefromjpeg($im_name);
+	$wm = imagecreatefrompng($wm_name);
+	
+	$wm_x = imagesx($wm);
+	$wm_y = imagesy($wm);
+	$mrg_right = 10;
+	$mrg_bottom = 10;
+	
+	$im_x = imagesx($im);
+	$im_y = imagesy($im);
+	
+	$dst_x = $im_x - $wm_x - $mrg_right;
+	$dst_y = $im_y - $wm_y - $mrg_bottom;
+	
+	imagecopy($im, $wm, $dst_x, $dst_y, 0, 0, $wm_x, $wm_y);
+	
+	header('Content-type: image/png');
+	
+	imagepng($im);
+	imagedestroy($im);
+
+?>
+
+..................................................
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+index.php
+
+<?php
+	
+	
+?>
+	<img src = "wmimage.php">
+...........................................
+
+wmimage.php
+
+<?php
+
+	$im_name = 'image.jpg';
+	$wm_name = 'klogo.png';
+	
+	$im = imagecreatefromjpeg($im_name);
+	$wm = imagecreatefrompng($wm_name);
+	
+	$wm_x = imagesx($wm);
+	$wm_y = imagesy($wm);
+	$mrg_right = 10;
+	$mrg_bottom = 10;
+	
+	$im_x = imagesx($im);
+	$im_y = imagesy($im);
+	
+	$dst_x = $im_x - $wm_x - $mrg_right;
+	$dst_y = $im_y - $wm_y - $mrg_bottom;
+	
+	imagecopy($im, $wm, $dst_x, $dst_y, 0, 0, $wm_x, $wm_y);
+	
+	header('Content-type: image/png');
+	
+	imagepng($im);
+	imagedestroy($im);
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<img src = "watermark.php?im=image.jpg">
+
+http://localhost/tcwphp/watermarks/wmimage.php?im=image.jpg;
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+index.php
+
+<?php
+	
+	
+?>
+
+<img src = "wmimage.php?im=image.jpg">
+.............................................
+
+wmimage.php
+
+
+<?php
+
+	if(isset($_GET['im'])){
+	
+		$im_name = $_GET['im'];
+		$wm_name = 'klogo.png';
+		
+		$im = imagecreatefromjpeg($im_name);
+		$wm = imagecreatefrompng($wm_name);
+		
+		$wm_x = imagesx($wm);
+		$wm_y = imagesy($wm);
+		$mrg_right = 10;
+		$mrg_bottom = 10;
+		
+		$im_x = imagesx($im);
+		$im_y = imagesy($im);
+		
+		$dst_x = $im_x - $wm_x - $mrg_right;
+		$dst_y = $im_y - $wm_y - $mrg_bottom;
+	
+	imagecopy($im, $wm, $dst_x, $dst_y, 0, 0, $wm_x, $wm_y);
+	
+	header('Content-type: image/png');
+	
+	imagepng($im);
+	imagedestroy($im);
+	
+	
+	}
+	
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+7.06
+
+ttf fonts download.com
+
+<?php
+
+	session_start();
+	$_SESSION['secure'] = rand(1000, 9999);
+	
+?>
+
+<img src = "generate.php" />
+...........................................
+
+<?php
+
+	session_start();
+	
+	$text = $_SESSION['secure'];
+	$t_size = 30;
+	
+	$im_width = 110;
+	$im_height = 40;
+	
+	$image = imagecreate($im_width, $im_height);
+	
+	$bg = imagecolorallocate($image, 255,255, 255);
+	$t_color = imagecolorallocate($image, 0, 0, 0);
+	
+	imagettftext($image, $t_size, 0, 15, 30, $t_color, 'D:\xampp\htdocs\tcwphp\watermarks\Windsong.ttf', $text);
+	imagejpeg($image);
+	imagedestroy($image);
+
+?>
+...............................................
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+index.php
+
+<?php
+
+	session_start();
+	$_SESSION['secure'] = rand(1000, 9999);
+	
+?>
+
+<img src = "generate.php" />
+...........................................
+
+generate.php
+
+<?php
+
+	session_start();
+	
+	$text = $_SESSION['secure'];
+	$t_size = 30;
+	
+	$im_width = 110;
+	$im_height = 40;
+	
+	$image = imagecreate($im_width, $im_height);
+	
+	$bg = imagecolorallocate($image, 255,255, 255);
+	$t_color = imagecolorallocate($image, 0, 0, 0);
+	
+	for($x=1; $x<=30; $x++){
+		
+		$x1 = rand(1,100);
+		$y1 = rand(1,100);
+		$x2 = rand(1,100);
+		$y2 = rand(1,100);
+		
+		imageline($image, $x1, $y1, $x2, $y2, $t_color);
+	}
+	
+	imagettftext($image, $t_size, 0, 15, 30, $t_color, 'D:\xampp\htdocs\tcwphp\watermarks\Windsong.ttf', $text);
+	imagejpeg($image);
+	imagedestroy($image);
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+index.php
+
+<?php
+
+	session_start();
+	
+	if(!isset($_POST['code'])){
+		
+		$_SESSION['secure'] = rand(1000, 9999);
+		
+		}else{
+			if($_SESSION['secure'] == $_POST['code']){
+				echo 'Correct';
+			}else{
+				echo 'Incorrect! Try again';
+			}
+		}
+	
+	
+	
+	
+?>
+
+<img src = "generate.php" /><br><br><br>
+
+<form action = "index.php" method="POST">
+	Security Code : <input type = "text" name="code" size="6">
+					<input type = "submit" value="Submit">
+
+
+</form>
+
+....................................................
+
+generate.php
+
+<?php
+
+	session_start();
+	
+	$text = $_SESSION['secure'];
+	$t_size = 30;
+	
+	$im_width = 150;
+	$im_height = 70;
+	
+	$image = imagecreate($im_width, $im_height);
+	
+	$bg = imagecolorallocate($image, 255,255, 255);
+	$t_color = imagecolorallocate($image, 0, 0, 0);
+	
+	for($x=1; $x<=30; $x++){
+		
+		$x1 = rand(1,100);
+		$y1 = rand(1,100);
+		$x2 = rand(1,100);
+		$y2 = rand(1,100);
+		
+		imageline($image, $x1, $y1, $x2, $y2, $t_color);
+	}
+	
+	imagettftext($image, $t_size, 0, 0, 50, $t_color, 'D:\xampp\htdocs\tcwphp\watermarks\SEASRN__.ttf', $text);
+	imagejpeg($image);
+	imagedestroy($image);
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+index.php
+
+<?php
+
+	session_start();
+	
+	if(!isset($_POST['code'])){
+		
+		$_SESSION['secure'] = rand(1000, 9999);
+		
+		}else{
+			if($_SESSION['secure'] == $_POST['code']){
+				$op = 'Correct';
+			}else{
+				$op = 'Incorrect! Try again';
+			}
+		}
+	
+	
+	
+	
+?>
+
+<img src = "generate.php" /><br><br>
+
+<div><?php if(isset($op)){echo $op;}?></div>
+
+<br>
+
+<form action = "index.php" method="POST">
+	Security Code : <input type = "text" name="code" size="6">
+					<input type = "submit" value="Submit">
+
+
+</form>
+
+............................................
+
+<?php
+
+	session_start();
+	
+	$text = $_SESSION['secure'];
+	$t_size = 30;
+	
+	$im_width = 150;
+	$im_height = 70;
+	
+	$image = imagecreate($im_width, $im_height);
+	
+	$bg = imagecolorallocate($image, 255,255, 255);
+	$t_color = imagecolorallocate($image, 0, 0, 0);
+	
+	for($x=1; $x<=30; $x++){
+		
+		$x1 = rand(1,100);
+		$y1 = rand(1,100);
+		$x2 = rand(1,100);
+		$y2 = rand(1,100);
+		
+		imageline($image, $x1, $y1, $x2, $y2, $t_color);
+	}
+	
+	imagettftext($image, $t_size, 0, 0, 50, $t_color, 'D:\xampp\htdocs\tcwphp\watermarks\SEASRN__.ttf', $text);
+	imagejpeg($image);
+	imagedestroy($image);
+
+?>
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+7.37
+
+index.php
+
+<?php
+	
+	if(isset($_GET['show'])){
+		
+		include $_GET['show'];
+	}
+	
+?>
+<input type="submit" onclick="window.location='index.php?show=some.php'">
+
+...................................
+
+some.php
+
+<?php
+	
+	echo '<br><br>Welcome to india <br><br>';
+?>
+
+......................................
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+index.php
+
+<?php
+	echo rand(111, 999).'<br><br>';
+
+?>
+
+
+<html>
+
+<head>
+
+<script>
+
+	function load(){
+		
+		if(window.XMLHttpRequest){
+			xmlhttp = new XMLHttpRequest();
+		}else {
+			xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+		}
+		
+		xmlhttp.onreadystatechange = function(){
+			if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+				
+				document.getElementById('adiv').innerHTML = xmlhttp.responseText;
+			}
+		}
+		
+		xmlhttp.open('GET', 'some.php', true);
+		xmlhttp.send();
+		
+	}
+
+
+</script>
+
+
+
+</head>
+
+<body>
+
+<input type="submit" onclick="load()">
+<br>
+<div id="adiv"></div>
+
+</body>
+
+</html>
+
+.....................................
+
+some.php
+
+<?php
+	
+	echo '<br><br>Welcome to india <br><br>';
+?>
+.....................................
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+index.php
+
+<?php
+	echo rand(111, 999).'<br><br>';
+
+?>
+
+
+<html>
+
+<head>
+
+<script>
+
+	function load(thediv, thefile){
+		
+		if(window.XMLHttpRequest){
+			xmlhttp = new XMLHttpRequest();
+		}else {
+			xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+		}
+		
+		xmlhttp.onreadystatechange = function(){
+			if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+				
+				document.getElementById(thediv).innerHTML = xmlhttp.responseText;
+			}
+		}
+		
+		xmlhttp.open('GET', thefile, true);
+		xmlhttp.send();
+		
+	}
+
+
+</script>
+
+
+
+</head>
+
+<body>
+
+<input type="submit" onclick="load('adiv', 'tobed.txt')">
+<br>
+<div id="adiv"></div>
+
+</body>
+
+</html>
+.......................................
+
+some.php
+
+<?php
+	
+	echo '<br><br>Welcome to india <br><br>';
+?>
+..................................
+
+tobed.txt
+
+"ted and wed thei sis<br><br>
+"ted and wed thei sis<br><br>
+"ted and wed thei sis<br><br>
+"ted and wed thei sis<br><br>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+8.08
+
+8.39
+
+index.php
+
+<html>
+<head>
+
+<script>
+
+	function findmatch(){
+		
+		if(window.XMLHttpRequest){
+			xmlhttp = new XMLHttpRequest();
+			
+		}else{
+			xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+		}
+		
+		xmlhttp.onreadystatechange = function(){
+			if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+				
+				document.getElementById('rdiv').innerHTML = xmlhttp.responseText;
+			}
+		}
+		
+		xmlhttp.open('GET', 'search.php?s_text='+document.search.s_text.value, true);
+		xmlhttp.send();
+		
+	}
+
+
+</script>
+
+</head>
+
+
+<body>
+
+<form name="search">
+
+	Type Keyword : <input type="text" name="s_text" onkeyup="findmatch()">
+
+
+</form>
+<br>
+
+<div id="rdiv"></div>
+
+</body>
+
+</html>
+...........................................
+
+search.php
+
+<?php
+
+	require 'dbconnect.php';
+	if(isset($_GET['s_text'])){
+		
+		$s_text = $_GET['s_text'];
+		$s_text = mysqli_real_escape_string($mycon, $s_text);
+		
+		if(!empty($s_text)){
+		
+			$query = "SELECT `name` FROM `foods` WHERE `name` LIKE '$s_text%'";
+			if($query_run = mysqli_query($mycon, $query)){
+				$num_rows = mysqli_num_rows($query_run);
+				
+				if($num_rows>=1){
+					while($row = mysqli_fetch_assoc($query_run)){
+						echo $row['name'].'<br><br>';
+						
+					}
+				}
+			}
+		}	
+	}
+?>
+..........................................
+
+dbconnect.php
+
+<?php
+
+	$host = 'localhost';
+	$user = 'root';
+	$pw = '';
+	$dbname = 'a_database';
+	
+	if($mycon = mysqli_connect($host, $user, $pw)){
+		
+		mysqli_select_db($mycon, $dbname);
+	}
+	
+	
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+index.php
+
+<html>
+
+<head>
+<script>
+		function insertdata(){
+			
+			if(window.XMLHttpRequest){
+				xmlhttp = new XMLHttpRequest();
+			}else{
+				xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+			}
+			xmlhttp.onreadystatechange = function(){
+				if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+					document.getElementById('msg').innerHTML = xmlhttp.responseText;
+				}
+			}
+			
+			//org = 'text='+document.getElementById('stext').value;
+			org = 'text=hello india to hyderabad';
+			
+			xmlhttp.open('POST', 'insert.php', true);
+			xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+			xmlhttp.send(org);
+		}
+
+</script>
+
+
+</head>
+
+<body>
+
+Type something : <input type = "text" id="stext">
+				 <input type = "submit" onclick="insertdata()"><br><br><br>
+				 
+			<div id="msg"></div>
+
+
+</body>
+
+
+</html>
+..........................................
+
+<?php
+
+	echo $_POST['text'];
+
+?>
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+index.php
+
+<html>
+
+<head>
+<script>
+		function insertdata(){
+			
+			if(window.XMLHttpRequest){
+				xmlhttp = new XMLHttpRequest();
+			}else{
+				xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+			}
+			xmlhttp.onreadystatechange = function(){
+				if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+					document.getElementById('msg').innerHTML = xmlhttp.responseText;
+				}
+			}
+			
+			org = 'text='+document.getElementById('stext').value;
+			
+			xmlhttp.open('POST', 'insert.php', true);
+			xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+			xmlhttp.send(org);
+		}
+
+</script>
+
+
+</head>
+
+<body>
+
+Type something : <input type = "text" id="stext">
+				 <input type = "submit" onclick="insertdata()"><br><br><br>
+				 
+			<div id="msg"></div>
+
+
+</body>
+
+
+</html>
+........................................
+
+insert.php
+
+<?php
+
+	require 'dbconnect.php';
+	
+	if(isset($_POST['text'])){
+		$text = $_POST['text'];
+		$text = mysqli_real_escape_string($mycon, $text);
+		
+		if(!empty($text)){
+			
+			$query = "INSERT INTO `somedata`(`id`, `data`) VALUES (NULL, '$text') ";
+			
+			if($query_run = mysqli_query($mycon, $query)){
+				
+				echo 'Data inserted successfully';
+			}else{
+				
+				echo 'Failed';
+			}
+			
+		}else{
+			echo 'Please enter from text';
+		}
+	}
+
+?>
+.....................................
+
+dbconnect.php
+
+<?php
+
+	require 'dbconnect.php';
+	
+	if(isset($_POST['text'])){
+		$text = $_POST['text'];
+		$text = mysqli_real_escape_string($mycon, $text);
+		
+		if(!empty($text)){
+			
+			$query = "INSERT INTO `somedata`(`id`, `data`) VALUES (NULL, '$text') ";
+			
+			if($query_run = mysqli_query($mycon, $query)){
+				
+				echo 'Data inserted successfully';
+			}else{
+				
+				echo 'Failed';
+			}
+			
+		}else{
+			echo 'Please enter from text';
+		}
+	}
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+index.php
+
+<html>
+
+<head>
+<script>
+
+		function showdata(){
+			
+			if(window.XMLHttpRequest){
+				xmlhttp = new XMLHttpRequest();
+			}else{
+				xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+			}
+			
+			xmlhttp.onreadystatechange = function(){
+				if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+					document.getElementById('d_data').innerHTML = xmlhttp.responseText;
+				}
+			}
+			
+			xmlhttp.open('GET', 'showdata.php', true);
+			xmlhttp.send();
+			
+		}
+		
+		function insertdata(){
+			
+			if(window.XMLHttpRequest){
+				xmlhttp = new XMLHttpRequest();
+			}else{
+				xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+			}
+			xmlhttp.onreadystatechange = function(){
+				if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+					document.getElementById('msg').innerHTML = xmlhttp.responseText;
+					
+					showdata();
+				}
+			}
+			
+			org = 'text='+document.getElementById('stext').value;
+			
+			xmlhttp.open('POST', 'insert.php', true);
+			xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+			xmlhttp.send(org);
+		}
+
+</script>
+
+
+</head>
+
+<body>
+
+Type something : <input type = "text" id="stext">
+				 <input type = "submit" onclick="insertdata()"><br><br><br>
+				 
+			<div id="msg"></div>
+			<br><br>
+			<div id="d_data"></div>
+
+
+</body>
+
+
+</html>
+
+.......................................
+
+insert.php
+
+<?php
+
+	require 'dbconnect.php';
+	
+	if(isset($_POST['text'])){
+		$text = $_POST['text'];
+		$text = mysqli_real_escape_string($mycon, $text);
+		
+		if(!empty($text)){
+			
+			$query = "INSERT INTO `somedata`(`id`, `data`) VALUES (NULL, '$text') ";
+			
+			if($query_run = mysqli_query($mycon, $query)){
+				
+				echo 'Data inserted successfully';
+			}else{
+				
+				echo 'Failed';
+			}
+			
+		}else{
+			echo 'Please enter from text';
+		}
+	}
+
+?>
+......................................
+
+dbconnect.php
+
+<?php
+
+	$host = 'localhost';
+	$user = 'root';
+	$pw = '';
+	$dbname = 'a_database';
+	
+	if($mycon = mysqli_connect($host, $user, $pw)){
+		
+		mysqli_select_db($mycon, $dbname);
+	}
+?>
+......................................
+
+showdata.php
+
+<?php
+
+	require 'dbconnect.php';
+	
+	$query = "SELECT `data` FROM `somedata`";
+	
+	if($query_run = mysqli_query($mycon, $query)){
+		$num_rows = mysqli_num_rows($query_run);
+		
+		if($num_rows >= 1){
+			while($row = mysqli_fetch_assoc($query_run)){
+				echo $row['data'].'<br><br>';
+			}
+		}
+	}
+	
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+echo BankAccount::balance;
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+index.php
+
+<?php
+
+	class BankAccount{
+		public $balance =500;
+	}
+	
+	$krishna = new BankAccount; // creation of instance
+	
+	echo $krishna->balance;
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+
+	class BankAccount{
+		const balance = 0;
+	}
+	
+	
+	
+	echo BankAccount::balance;
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+
+	class BankAccount{
+		const balance = 500;
+	}
+	
+	
+	$krishna = new BankAccount;
+	echo $krishna::balance;
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+
+	class BankAccount{
+		public $balance = 0;
+		
+		public function displayBalance(){
+			return 'Balance : '.$this->balance;
+		}
+	}
+	
+	
+	$krishna = new BankAccount;
+	echo $krishna-> displayBalance();
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+index.php
+
+<?php
+
+	class BankAccount{
+		public $balance = 0;
+		
+		public function displayBalance(){
+			return 'Balance : Rs.'.$this->balance.'/-';
+		}
+	
+	
+	public function deposit($amount){
+		
+		$this->balance = $this->balance + $amount;
+	}
+	
+	public function withdraw($amount){
+		$this->balance = $this->balance - $amount;
+	}
+	
+	}
+	
+	
+	$krishna = new BankAccount;
+	$krishna->deposit(2000);
+	$krishna->withdraw(300);
+	echo 'Krishna\'s '.$krishna->displayBalance();
+	
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+
+	class BankAccount{
+		public $balance = 0;
+		
+		public function displayBalance(){
+			return 'Balance : Rs.'.$this->balance.'/-<br><br>';
+		}
+	
+	
+	public function deposit($amount){
+		
+		$this->balance = $this->balance + $amount;
+	}
+	
+	public function withdraw($amount){
+		$this->balance = $this->balance - $amount;
+	}
+	
+	}
+	
+	
+	$krishna = new BankAccount;
+	$krishna->deposit(2000);
+	$krishna->withdraw(300);
+	echo 'Krishna\'s '.$krishna->displayBalance();
+	
+	$vikram = new BankAccount;
+	$vikram->deposit(3000);
+	$vikram->withdraw(900);
+	echo 'Vikram\'s '.$vikram->displayBalance();
+	
+	?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+
+	class BankAccount{
+		public $balance = 0;
+		
+		public function displayBalance(){
+			return 'Balance : Rs.'.$this->balance.'/-<br><br>';
+		}
+	
+	
+	public function deposit($amount){
+		
+		$this->balance = $this->balance + $amount;
+	}
+	
+	public function withdraw($amount){
+		$this->balance = $this->balance - $amount;
+	}
+	
+	}
+	
+	
+	$krishna = new BankAccount;
+	$krishna->deposit(2000);
+	$krishna->withdraw(300);
+	$krishna->deposit(5000);
+	echo 'Krishna\'s '.$krishna->displayBalance();
+	
+	$vikram = new BankAccount;
+	$vikram->deposit(3000);
+	$vikram->withdraw(900);
+	echo 'Vikram\'s '.$vikram->displayBalance();
+	
+	?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+
+	class BankAccount{
+		public $balance = 0;
+		
+		public function displayBalance(){
+			return 'Balance : Rs.'.$this->balance.'/-<br><br>';
+		}
+	
+	
+	public function deposit($amount){
+		
+		$this->balance = $this->balance + $amount;
+	}
+	
+	public function withdraw($amount){
+		
+		if(($this->balance)<$amount){
+			echo 'Balance is Low<br><br>';
+			
+		}else{
+			$this->balance = $this->balance - $amount;
+		}
+		
+	}
+	
+	}
+	
+	
+	$krishna = new BankAccount;
+	$krishna->deposit(2000);
+	$krishna->withdraw(300);
+	echo 'Krishna\'s '.$krishna->displayBalance();
+	
+	$vikram = new BankAccount;
+	$vikram->deposit(3000);
+	$vikram->withdraw(5900);
+	echo 'Vikram\'s '.$vikram->displayBalance();
+	
+	?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+
+	class BankAccount{
+		
+		public function __construct(){
+			echo $this->displayBalance();
+		}
+		
+		public $balance = 0;
+		
+		public function displayBalance(){
+			return 'Balance : Rs.'.$this->balance.'/-<br><br>';
+		}
+	
+	
+	public function deposit($amount){
+		
+		$this->balance = $this->balance + $amount;
+	}
+	
+	public function withdraw($amount){
+		
+		if(($this->balance)<$amount){
+			echo 'Balance is Low<br><br>';
+			
+		}else{
+			$this->balance = $this->balance - $amount;
+		}
+		
+	}
+	
+	}
+	
+	$krishna = new BankAccount;
+	
+	
+	
+	?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+
+	class BankAccount{
+		
+		public function __construct($da, $wa){
+			
+			$this->deposit($da);
+			$this->withdraw($wa);
+			echo $this->displayBalance();
+		}
+		
+		public $balance = 0;
+		
+		public function displayBalance(){
+			return 'Balance : Rs.'.$this->balance.'/-<br><br>';
+		}
+	
+	
+	public function deposit($amount){
+		
+		$this->balance = $this->balance + $amount;
+	}
+	
+	public function withdraw($amount){
+		
+		if(($this->balance)<$amount){
+			echo 'Balance is Low<br><br>';
+			
+		}else{
+			$this->balance = $this->balance - $amount;
+		}
+		
+	}
+	
+	}
+	
+	$krishna = new BankAccount(5000, 1500);
+	
+	
+	
+	?>
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+
+	class Example{
+			public $text = 'Welcome to india';
+			
+			public function display(){
+				return '<h2>'.$this->text.'</h2>';
+			}
+	}
+	
+	$ex = new Example;
+	echo $ex->text;
+	
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+
+	class Example{
+			public $text = 'Welcome to india';
+			
+			public function display(){
+				return '<h2>'.$this->text.'</h2>';
+			}
+	}
+	
+	$ex = new Example;
+	echo $ex->text;
+	echo $ex->display();
+	
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+
+	class Example{
+			public $text = 'Welcome to india';
+			
+			public function display(){
+				return '<h2>'.$this->text.'</h2>';
+			}
+	}
+	
+	class AnExample extends Example{
+			
+	}
+	
+	
+	$ae = new AnExample;
+	
+	echo $ae->text;
+	
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+
+	class Example{
+			public $text = 'Welcome to india';
+			
+			public function display(){
+				return '<h2>'.$this->text.'</h2>';
+			}
+	}
+	
+	class AnExample extends Example{
+			
+	}
+	
+	
+	$ae = new AnExample;
+	
+	echo $ae->display();
+	
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+
+	class Example{
+			public $text = 'Welcome to india';
+			
+			public function display(){
+				return '<h2>'.$this->text.'</h2>';
+			}
+	}
+	
+	class AnExample extends Example{
+		
+		public $string = 'Welcome to Telangana';
+		
+		public function displayString(){
+		
+			return '<h1>'.$this->string.'</h1>';
+		
+		}
+			
+	}
+	
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+index.php
+
+<?php
+
+	require 'bank.php';
+	
+	class savingsAccount extends BankAccount{
+		
+		
+	}
+	
+	class currentAccount extends BankAccount{
+		
+	}
+	
+	$vikky_sa = new savingsAccount;
+	$vikky_ca = new currentAccount;
+	
+	$vikky_sa->deposit(10000);
+	$vikky_ca->deposit(20000);
+	$vikky_sa->withdraw(2500);
+	$vikky_ca->withdraw(5000);
+	
+	echo 'Savings Account '.$vikky_sa->displayBalance();
+	echo 'Current Account '.$vikky_ca->displayBalance();
+?>
+
+....................................
+
+bank.php
+
+<?php
+	class BankAccount{
+		
+		public $balance = 0;
+		
+		public function displayBalance(){
+			return 'Balance : Rs.'.$this->balance.'/-<br><br>';
+		}
+	
+	
+	public function deposit($amount){
+		
+		$this->balance = $this->balance + $amount;
+	}
+	
+	public function withdraw($amount){
+		
+		if(($this->balance)<$amount){
+			echo 'Balance is Low<br><br>';
+			
+		}else{
+			$this->balance = $this->balance - $amount;
+		}
+		
+	}
+	
+	}
+	
+	?>
+................................................
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+<?php
+
+	$age = '27';
+	
+	try{
+		if($age >= 18){
+			echo 'You can vote';
+		}else{
+			throw new Exception('You cannot vote!');
+		}
+		
+	}catch(Exception $ex){
+			echo $ex->getMessage();
+	}
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+
+	$host = 'localhost';
+	$user = 'root';
+	$pass = '';
+	$dbname = 'a_database';
+	
+	class ServerException extends Exception{}
+	class DbException extends Exception{}
+	
+	try{
+		if($mycon = @mysqli_connect($host, $user, $pass)){
+			if(@mysqli_select_db($mycon, $dbname)){
+				echo 'Connected';
+			}else{
+				throw new DbException('Could not select database');
+			}
+			
+		}else{
+			throw new ServerException('Could not connect');
+		}
+	}catch(ServerException $ex){
+		echo 'Error '.$ex->getMessage();
+		
+	}catch(DbException $ex){
+		echo 'Error: '.$ex->getMessage();
+	}
+	
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+
+
+
+
+
+
+
+
+
+
+

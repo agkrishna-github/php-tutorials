@@ -1,0 +1,2251 @@
+<?php
+
+print "hellow india world";
+
+?>
+..........................
+
+<?php
+/*
+echo "hello india <br>"
+
+;echo "php tutorial <br>";
+
+echo 'my india world <br>';
+
+echo "<input type=\"text\" value=\"name\"><br>";
+
+
+echo '<input type = "text" value = "username">';
+
+	//$x = 'suresh';
+
+*/
+
+
+
+
+?>
+<!--
+<input type = "text" value = "<?php echo $x ?>" >
+
+
+-->
+..........................
+
+<?php
+/*
+	$username = 'mahesh';
+	
+	echo $username;
+*/
+
+
+/*
+	$x = 150;
+	$y = 150;
+	$z = $x + $y;
+	
+	*/
+	
+	//echo 'The result is : ';
+	//echo $z;
+
+	//echo 'The result is : '.$z;
+
+	//echo $x. ' + ' .$y. ' = ' .$z; 
+	
+	//echo "$x + $y = $z";
+
+
+
+	$day = 312;
+	$month = 'December';
+	$year = 2017;
+	
+	//echo $day. ' ' .$month. ' ' .$year;
+	
+	$date = 'The date is : '.$day. ' ' .$month. ' ' .$year;
+	
+	echo $date;
+	
+..........................................
+
+<?php
+
+//if statement
+
+/*
+
+if (1==1){
+	
+	echo 'True';
+}
+
+*/
+
+/*
+
+if (1==2) {
+	
+	echo 'Ture';
+}else {
+	echo 'False';
+}
+
+*/
+
+/*
+$x = 5;
+
+if ($x == 5) {
+	
+	echo 'correct';
+}
+*/
+
+
+/*
+$x = 5;
+$y = 15;
+
+if ($x == $y){
+	
+	echo 'correct';
+}else {
+	echo 'incorrect';
+}
+
+*/
+
+/*
+
+	$un = 'MAHESH';
+	$password = 'gemini';
+	
+	if ($un == 'MAHESH'){
+		
+		if($password == 'gemini'){
+			
+			echo 'you can enter';
+		}else {
+			
+			echo 'invalid password';
+		}
+		
+	}else {
+		echo 'You cannot enter';
+	}
+.................................
+*/
+
+/*
+	$un = 'MAHESH';
+	$password = 'gemini';
+	
+	if ( $un == 'MAHESH' && $password == 'gemini'){
+		
+		echo 'you can enter';
+	}else {
+		echo 'you can not enter';
+	}
+.....................
+*/
+
+
+/*
+		$un = 'MAHESH';
+	$password = 'gemini';
+	
+	if ( $un == 'MAHESH' || $password == 'gemini'){
+		
+		echo 'you can enter';
+	}else {
+		echo 'you can not enter';
+	}
+.............................
+*/
+
+/*
+	$age = 65;
+	
+	if($age < 20){
+		echo 'You are too young';
+	}else if ($age >=20 && $age <40){
+		echo 'You are young';
+	}else if ($age >=40 && $age <60){
+		echo 'Youare old';
+	}else {
+		echo 'You are too old';
+	}
+..........................
+
+*/
+
+	$age = 65;
+	
+	if ($age < 20) {
+		echo 'You are too young';
+	}else if ($age >= 20 && $age <40){
+		echo 'You are young';
+	}else if ($age >=40 && $age <60){
+		echo 'You are old';
+	}else {
+		echo 'You are too old';
+	}
+
+1.35
+............................
+
+<?php
+
+// operators
+
+// = assignment operator
+
+/*
+	$x = 5;
+	$x = $x + 10;
+	
+	echo $x;
+
+*/
+
+/*
+	$x = 5;
+	
+	$x += 5;
+	
+	echo $x;
+
+*/
+/*
+
+	$x = 10;
+	
+	$x -= 5;
+	
+	echo $x;
+*/
+
+/*
+
+	$x = 10;
+	
+	$x *= 5;
+	
+	echo $x;
+	
+	*/
+	/*
+	
+	$x = 10;
+	
+	$x /= 5;
+	
+	echo $x;
+
+*/
+/*
+
+	$x = 5;
+	
+	if ($x==51){
+		
+		echo 'You are welcome';
+	}else {
+		echo 'You are not welcom';
+	}
+*/
+
+/*
+
+	$x = 5;
+	
+	if ($x<=51){
+		
+		echo 'You are welcome';
+	}else {
+		echo 'You are not welcom';
+	}
+*/
+
+/*
+	==
+	!=
+	<
+	>
+	<=
+	>=
+	
+*/
+	
+/*
+		+
+		-
+		*
+		/
+		% (modulas)
+		++
+		--
+*/
+
+/*
+	
+	$a = 10;
+	$b = 20;
+	$c = $a + $b;
+	$c++;
+	
+	echo 'Result is : '.$c;
+
+	*/
+	
+	/*
+	
+	logical operators
+	
+	&& = and
+	
+	|| = or	
+	
+	=== 
+	
+	*/
+/*
+	$a = 9;
+	$b = 3;
+	
+	if ($a == 9 && $b <= 5) {
+		
+		echo 'correct';
+	}
+	*/
+	
+	/*
+
+		$a = 9;
+	$b = 3;
+	
+	if ($a == 9 || $b <= 5) {
+		
+		echo 'correct';
+	}
+*/
+
+...............................
+
+<?php
+
+//loops
+
+// -- while loop
+
+/*
+$counter = 1;
+
+while($counter <=10){
+	
+	echo $counter.' I am an indian<br><br>';
+	$counter++;
+}
+
+*/
+
+/*
+
+$counter = 20;
+
+do {
+	echo $counter.' Hello india<br><br>';
+	$counter++;
+	
+}while ($counter <=10);
+
+*/
+
+/*
+
+for ($c=1; $c<=10; $c++){
+	
+	echo $c.' php tutorials<br><br>';
+}
+
+*/
+
+/*
+
+$counter = 1;
+
+while($counter <=10){
+	
+	echo $counter.' I am an indian<br><br>';
+	$counter += 4;
+}
+
+*/
+
+.......................................
+
+<?php
+
+// switch statement
+
+/*
+
+$num = 20;
+
+switch($num){
+	
+	case 1 :
+	echo 'one';
+	break;
+	
+	case 2 :
+	echo 'Two';
+	break;
+	
+	case 3 :
+	echo 'Three';
+	break;
+	
+	default :
+	echo 'The number not found';
+	
+}
+*/
+
+	$password = "shyam1234";
+	
+	switch($password){
+		
+		case "shyam123":
+		case "rambabu123":
+		
+			echo 'you can enter';
+			break;
+			
+			default:
+			echo 'you can not enter';
+		
+	}
+
+......................................
+
+<?php
+
+
+>>>>>>>>>>>>>>>>>>>
+
+
+// die and exit functions
+
+
+
+	echo 'hello';
+	
+	die();
+
+	echo 'Welcome to the world';
+
+>>>>>>>>>>>>>>>>>>>>>>>
+
+
+
+>>>>>>>>>>>>>>>>>>>
+
+	echo 'hello';
+	
+	exit();
+
+	echo 'Welcome to the world';
+
+>>>>>>>>>>>>>>>>>>>
+
+
+
+>>>>>>>>>>>>>>>>>>>
+
+	echo 'hello';
+	
+	exit('Error :: page cant\' open');
+
+	echo 'Welcome to the world';
+
+>>>>>>>>>>>>>>>>>>>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>	
+	
+	mysqli_connect('localhost', 'root', '') 
+	
+	echo 'connected123';
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>
+
+	mysqli_connect('localhost', 'root', 'aaa') || die("cant connect to database");
+	
+	echo 'connected123';
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+	@mysqli_connect('localhost', 'root', 'aaa') || die("cant connect to database");
+	
+	echo 'connected123';
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+	echo '<h1>Welcome to the world </h1>';
+
+	echo '<h2>Welcome to the world </h2>';
+
+	echo '<strong>Welcome to the world <strong>';
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+	$mycls = 'maindiv';
+
+	echo '<style>
+		
+		.maindiv{padding:50px; background-color:red; margin:10px;max-width:300px; }
+	
+	</style>';
+
+?>
+
+	<div class ="<?php echo $mycls ?>">
+
+	BOX 1
+	</div>
+
+	<div class ="<?php echo $mycls ?>">
+
+	BOX 2
+	</div>
+	
+	<div class ="<?php echo $mycls ?>">
+
+	BOX 3
+	</div>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+functions:
+
+
+<?php
+
+
+
+function myfunction(){
+	
+	echo 'Mahesh';
+}
+
+myfunction();
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+
+myfunction();
+
+function myfunction(){
+	
+	echo 'Mahesh<br>';
+}
+
+myfunction();
+myfunction();
+myfunction();
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+
+	function add($num1, $num2){
+	echo $num1 + $num2;
+}
+
+
+add(5, 10);
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+
+	function add($num1, $num2){
+	echo $num1 + $num2;
+}
+
+$x = 100;
+$y = 400;
+
+add($x, $y);
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+
+function printdate($day, $month, $year){
+
+	 echo $day.' '.$month.' '.$year;
+}
+
+$d = 5;
+$m = "January";
+$y = 2021;
+
+printdate($d, $m, $y);
+
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+
+function printdate($day, $month, $year){
+
+	 echo $day.' '.$month.' '.$year;
+}
+
+
+
+printdate(5, "January", 2021);
+
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+
+// (10 + 10)/(5 + 5) = 20/10
+
+function add($num1, $num2){
+	
+	$result = $num1 + $num2;
+	return $result;
+	
+}
+
+
+function divide($num3, $num4){
+
+	$resultnew = $num3/$num4;
+	return $resultnew;
+}
+
+	$finalresult = divide(add(10,10), add(5,5));
+
+
+	echo 'The final Result is : '.$finalresult;
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+3.20
+
+Types of variables
+	1. Global Variables
+	2.Loval Variables
+	3.Static Variables
+
+<?php
+
+	$x = 2021;
+	echo $x;
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+
+	$x = 2021;
+	
+	function myfunction(){
+	
+	echo $x;
+}
+
+myfunction();
+
+
+?>
+(it will not work out)
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+global variable:
+
+<?php
+
+	$x = 2021;
+	
+	function myfunction(){
+	
+	global $x;
+	echo $x;
+}
+
+myfunction();
+
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+local variable;
+
+<?php
+
+	function fun1(){
+
+		$x = 100;
+		echo $x;
+	}
+
+fun1();
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+
+	function fun1(){
+
+		$x = 100;
+		
+	}
+
+fun1();
+
+echo $x;
+
+?>
+
+(it will not work out)
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+
+	function fun1(){
+
+		$x = 100;
+		return $x;
+	}
+
+echo fun1();
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+
+	function fun1(){
+
+		$x = 100;
+		return $x;
+	}
+
+	$y = 250;
+	$z = $y + fun1();
+
+	echo $z;
+
+?>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Static variables;
+
+<?php
+
+	function mytest(){
+	static $x = 0;
+	echo $x.'<br>';
+	$x++;
+}
+
+mytest();
+mytest();
+mytest();
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+//string functions
+
+<?php
+
+	$text = 'Welcome to The world';					//str_word_count()
+	$totalwords = str_word_count($text);
+	echo $totalwords;
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+
+	$text = 'Welcome to The world';					//print_r()
+	$totalwords = str_word_count($text, 1);
+	//echo $totalwords;
+	print_r($totalwords);
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+
+	$text = 'Welcome to The world';			
+	$totalwords = str_word_count($text, 1, '.');
+	//echo $totalwords;
+	print_r($totalwords);
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+
+	$text = 'Welcome to The world & come in this world .';			
+	$totalwords = str_word_count($text, 1, '.');
+	//echo $totalwords;
+	print_r($totalwords);
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+	$text = 'Welcome to the world india';				//str_shuffle(var)
+	$shuffledtext = str_shuffle($text);
+	echo $shuffledtext;
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+			
+	$shuffledtext = str_shuffle('djkfjsdkfjj');
+	echo $shuffledtext;
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+	$t = 'abcdefghij012345678';					//strlen(var/string)
+	$t1 = strlen($t);
+	echo $t1;
+
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+	$t = 'abcdefghij012345678';			
+	$t1 = strlen($t);
+	echo $t.'<br><br>';
+
+	$shuffledT = str_shuffle($t);
+	echo $shuffledT;
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+	$t = 'abcdefghij012345678';				//substr()		//substr(var/string)					
+	$t1 = strlen($t);
+	echo $t.'<br><br>';
+
+	$shuffledT = str_shuffle($t);
+	echo $shuffledT.'<br><br>';
+	$subtext = substr('mahesh', 0, strlen('mahesh'));
+	echo $subtext;
+	
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+	$t = 'abcdefghij012345678';					//substr(var/string)			
+	$t1 = strlen($t);
+	echo $t.'<br><br>';
+
+	$shuffledT = str_shuffle($t);
+	echo $shuffledT.'<br><br>';
+	$subtext = substr('mahesh', 0, 3);
+	echo $subtext;
+	
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+	$t = 'abcdefghij012345678';					//substr(var/string)			
+	$t1 = strlen($t);
+	echo $t.'<br><br>';
+
+	$shuffledT = str_shuffle($t);
+	echo $shuffledT.'<br><br>';
+	$subtext = substr('mahesh', 1, 4);
+	echo $subtext;
+	
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+	$t = 'abcdefghij012345678';						
+	$t1 = strlen($t);				//strlen()
+	echo $t.'<br><br>';
+
+	$shuffledT = str_shuffle($t);
+	echo $shuffledT.'<br><br>';
+	$subtext = substr($shuffledT, 0, $t1);
+	echo $subtext;
+	
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+	$t = 'abcdefghij012345678';						
+	$t1 = strlen($t);				//str_shuffle()
+	echo $t.'<br><br>';
+
+	$shuffledT = str_shuffle($t);
+	echo $shuffledT.'<br><br>';
+	$subtext = substr($shuffledT, 0, 5);
+	echo $subtext;
+	
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+	$t = 'abcdefghij012345678';						
+	$t1 = strlen($t);
+	echo $t.'<br><br>';
+
+	$shuffledT = str_shuffle($t);
+	echo $shuffledT.'<br><br>';
+	$subtext = substr($shuffledT, 0, $t1/2);
+	echo $subtext;
+	
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+
+	$t1 = 'Welcome to india and telangana';	    				//similar_text(var, avar)
+
+	$t2 = 'Welcome to india and telangana';
+
+	similar_text($t1, $t2, $ress);
+
+	echo $ress;
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+
+	$t1 = 'Welcome to india and telangana';	    				//similar_text(var, avar)
+
+	$t2 = 'Welcome to india coming of andhra';
+
+	similar_text($t1, $t2, $ress);
+
+	echo $ress;
+?>
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<?php
+	$t1 = 'Welcome to india and telangana';					//strrev(var)
+
+	echo strrev($t1);
+	
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 4.13
+
+<?php
+	$t1 = 'Welcome to india and telangana';					//strrev(var)
+
+	echo strrev($t1);
+	
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+<?php
+	$string = 'This is a PHP <img src="image.jpg">tutorial.';		//htmlentities(var)
+
+	echo $string.'<br><br>';
+
+	$stringEnt = htmlentities($string);
+
+	echo $stringEnt.'<br><br>';						//htmlentities(addslashes(var))
+	
+	$stringwithslashes = htmlentities(addslashes($string));
+
+	echo $stringwithslashes.'<br><br>';
+
+	echo stripslashes($stringwithslashes);					//stripslashes(var)
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+								//print_r(var)
+arrays ;
+
+<?php
+
+	$users = array('Mahesh','Suresh','Jagan');
+
+	print_r($users);
+
+	echo '<br><br>'.$users[0];
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+								
+arrays ;
+
+<?php
+
+	$users = array('Mahesh','Suresh','Jagan');
+
+	print_r($users);
+
+	echo '<br><br>'.$users[0].'<br><br>';
+
+	$users[3] = 'anil';
+
+	print_r($users);
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+//Associative Arrays
+
+<?php
+
+	$food = array('Biryani'=>500,'Pizza'=>200,'Salad'=>300);
+	
+	echo $food['Biryani'];
+
+?>
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+//Associative Arrays
+
+<?php
+
+	$food = array('Biryani'=>500,'Pizza'=>200,'Salad'=>300);
+	
+	foreach($food as $f){
+
+	echo $f.'<br>';
+}
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+<?php
+	
+	$food = array('Biryani'=>500, 'Pizza'=>200, 'Salad'=>300);
+
+	foreach($food as $f=>$rs){
+	
+	echo $f.'<br>';
+}
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+<?php
+	
+	$food = array('Biryani'=>500, 'Pizza'=>200, 'Salad'=>300);
+
+	foreach($food as $f=>$rs){
+	
+	echo $f.'<br>';
+	echo $rs.'<br>';
+}
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+<?php
+	
+	$food = array('Biryani'=>500, 'Pizza'=>200, 'Salad'=>300);
+
+	foreach($food as $f=>$rs){
+	
+	echo '<strong>'.$f.'</strong> -- Rs. ';
+	echo $rs.'<br>';
+}
+
+?>
+
+4.45
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+// Multi Dimensional Arrays
+
+<?php
+	
+/*
+
+	Strudents
+		Boys
+			Mahesh
+			suresh
+			kranthi
+			ravi
+		Girls
+			seetha
+			geetha
+			Rosy
+			Meera
+*/
+
+	$students = array('boys'=>array('Mahesh','Suresh','Kranthi'),
+			'girls'=>array('Seetha','Geetha','Rosy'));
+
+	//echo $students ['boys'][0];
+	//echo $students ['girls'][1];
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+include / require
+.................................
+indexpage.php:
+
+
+<?php
+
+	include 'headerinc.php';
+
+?>
+
+...................................
+page1.php:
+
+<?php
+
+	include 'headerinc.php';
+?>
+
+....................................
+page2.php:
+
+<?php
+
+	include 'headerinc.php';
+?>
+
+
+.........................................
+page3.php:
+
+<?php
+	include 'headerinc.php';
+
+?>
+............................................
+
+headerinc.php:
+
+<?php
+	echo '<h1>Hello world </h1> <h2>Learn computer for free </h2>';
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+incs/newinc.php
+
+5.15
+
+................5.27
+
+time();
+
+<?php
+
+	echo time();
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+<?php
+
+ $time =  time();
+
+ $realtime = date('h:i:s', $time);
+
+ echo $realtime;
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+<?php
+
+ $time =  time();
+
+ $realtime = date('D d M Y @ h:i:s', $time);
+
+ echo $realtime;
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+<?php
+
+ $time =  time();					//strtotime();
+
+ $realtime = date('D d M Y @ h:i:s', $time);
+
+ $changedtime = strtotime('+ 5 hours 30 minutes');
+
+ $ctime = date('D d M Y @ h:i:s', $changedtime);
+
+
+ echo $realtime;
+
+ echo $ctime;
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+<?php
+
+ $changedtime = strtotime('+ 5 hours 30 minutes');
+
+ $ctime = date('D d M Y @ h:i:s', $changedtime);
+
+ echo '<h2>'.$ctime.'<h2>';
+
+ $mtime = strtotime('+ 1 week + 5 hours 30 minutes');
+
+ $updatedtime = date('D d M Y @ h:i:s', $mtime);
+
+	echo $updatedtime;
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+<?php
+
+ $changedtime = strtotime('+ 5 hours 30 minutes');
+
+ $ctime = date('D d M Y @ h:i:s', $changedtime);
+
+ echo '<h2>'.$ctime.'<h2>';
+
+ $mtime = strtotime('- 10 days + 5 hours 30 minutes');
+
+ $updatedtime = date('D d M Y @ h:i:s', $mtime);
+
+	echo $updatedtime;
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+<?php
+
+	$rand = rand();
+
+	echo '<h2>'.$rand.'</h2>';
+
+
+	$max = getrandmax();
+
+	echo '<h2>'.$max.'</h2>';
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+<h1>ROLL DICER</h1>
+
+<?php
+	if(isset($_POST['roll'])){
+
+	$rand = rand();
+	
+	echo '<h2>You got : '.$rand.'</h2>';
+}	
+	
+?>
+s
+
+
+<form action="new.php" method="POST">
+
+<input type = "submit" name="roll" value = "Roll Dicer">
+
+</form>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+<h1>ROLL DICER</h1>
+
+<?php
+	if(isset($_POST['roll'])){
+
+	$rand = rand(1, 10);
+	
+	echo '<h2>You got : '.$rand.'</h2>';
+}	
+	
+?>
+
+<form action="new.php" method="POST">
+
+<input type = "submit" name="roll" value = "Roll Dicer">
+
+</form>
+
+6.04
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+<?php
+
+	echo $_SERVER['SCRIPT_NAME'];
+	
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+<h1>index.php</h1>
+
+<?php
+	include 'forminc.php';
+	
+	if(isset($_POST['submit'])){
+
+	echo 'CLICKED ON INDEX PAGE';
+
+};
+	
+?>
+
+
+...........................................
+
+<h1>newpage.php</h1>
+
+<?php
+
+	include 'forminc.php';
+	
+		if(isset($_POST['submit'])){
+
+	echo 'CLICKED ON NEW PAGE';
+
+};
+?>
+
+...........................................
+
+forminc.php
+
+<?php
+
+	$sName = $_SERVER['SCRIPT_NAME'];
+	
+?>
+
+
+<form action="<?php echo $sName ?>" method="POST">
+
+<input type="submit" name="submit" value="submit">
+
+</form>
+
+6.20
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+<h1>index.php</h1>
+
+<?php
+	
+	echo $_SERVER['HTTP_HOST'];
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+<h1>index.php</h1>
+
+<?php
+	
+	require 'confinc.php';
+
+	echo '<img src="'.$images.'sweety.jpeg" />';
+
+?>
+
+..................................
+
+confinc.php
+
+<?php
+	$host = $_SERVER['HTTP_HOST'];
+	$images = 'http://'.$host.'/tcwphp/lesson all/images/';
+
+
+?>
+
+6.31
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+<h1>WELCOME TO INDIA</h1>
+
+<?php
+	header('Location: http://www.facebook.com');
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+<?php ob_start(); ?>				//ob_start();
+
+<h1>WELCOME TO INDIA</h1>
+
+<?php
+	header('Location: http://www.facebook.com');
+
+
+   ob_end_flush();
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+<?php ob_start(); ?>				//ob_start();
+
+<h1>WELCOME TO INDIA</h1>
+
+<?php
+	
+	$rpage = 'http://www.facebook.com';
+	$redirect = true;
+
+	if($redirect == true){
+		header('Location: '.$rpage);
+}
+
+
+   ob_end_flush();
+?>
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+// to find the ip address
+
+index.php
+
+<?php
+	
+	echo $_SERVER['REMOTE_ADDR'];
+
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+// to find the ip address
+
+index.php
+
+<?php
+	require 'confinc.php';
+	
+	foreach($ip_blocked as $ip){
+		
+		echo $ip.'<br>';
+}
+
+?>
+
+............................
+
+confinc.php
+
+<?php
+	
+	$ip_address = $_SERVER['REMOTE_ADDR'];
+	$ip_blocked = array('127.0.0.1', '10.0.10.10');
+
+?>
+
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+
+
+// to find the ip address and block address
+
+index.php
+
+<?php
+	require 'confinc.php';
+	
+	foreach($ip_blocked as $ip){
+		
+		if($ip == $ip_address){
+			die('Your IP address '.$ip_address.' has blocked');
+}
+			
+}
+
+?>
+
+<h1> WELCOME TO INDIA </h1>
+
+............................
+
+confinc.php
+
+<?php
+	
+	$ip_address = $_SERVER['REMOTE_ADDR'];
+	$ip_blocked = array('127.0.0.1', '10.0.10.10');
+
+?>
+
+6.54
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+index.php
+
+<?php
+
+
+
+
+?>
+
+<form action="index.php" method="GET">
+	Day:<br><input type="text" name="day"><br><br>
+	Month:<br><input type="text" name="month"><br><br>
+	Year:<br><input type="text" name="year"><br><br>
+	<input type="submit" value="submit">
+	
+</form>
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+index.php
+
+//TO GET DATA TO DISPLAY USER
+
+<?php
+	echo $_GET['year'];
+
+
+
+?>
+
+<form action="index.php" method="GET">
+	Day:<br><input type="text" name="day"><br><br>
+
+	Month:<br><input type="text" name="month"><br><br>
+
+	Year:<br><input type="text" name="year"><br><br>
+
+	<input type="submit" value="submit">
+	
+</form>
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+index.php
+
+//TO GET DATA TO DISPLAY USER
+
+<?php
+	
+	if(isset($_GET['day']) && isset($_GET['month']) && isset($_GET['year'])){
+
+	$day = $_GET['day'];
+	$month = $_GET['month'];
+	$year = $_GET['year'];
+
+	if(!empty($day) && !empty($month) && !empty($year)){
+
+		echo '<h2>ok</h2>';
+}else{
+	echo '<h2>Fill in all fields</h2>';
+
+}
+
+}
+
+
+?>
+
+<form action="index.php" method="GET">
+	Day:<br><input type="text" name="day"><br><br>
+
+	Month:<br><input type="text" name="month"><br><br>
+
+	Year:<br><input type="text" name="year"><br><br>
+
+	<input type="submit" value="submit">
+	
+</form>
+
+7.23
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+index.php
+
+<?php
+	if(isset($_POST['userid']) && isset($_POST['password'])){
+		$user = $_POST['userid'];
+		$pass = $_POST['password'];
+
+	if(!empty($user) && !empty($pass)){
+	
+		echo '<h2>ok</h2>';
+	}else{
+		echo '<h2> Fill in all fields</h2>'; 
+}
+		
+	}
+
+?>
+
+<form action="index.php" method="POST">
+
+Username:<br><input type="text" name="userid"><br>
+Username:<br><input type="password" name="password"><br>
+<input type="submit" value="LOG IN">
+</form>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+index.php
+
+<?php
+	if(isset($_POST['userid']) && isset($_POST['password'])){
+		$user = $_POST['userid'];
+		$pass = $_POST['password'];
+
+	if(!empty($user) && !empty($pass)){
+	
+		echo '<h2>Username: '.$user.'</h2>';
+		echo '<h2>Username: '.$pass.'</h2>';
+	}else{
+		echo '<h2> Fill in all fields</h2>'; 
+}
+		
+	}
+
+?>
+
+<form action="index.php" method="POST">
+
+Username:<br><input type="text" name="userid"><br>
+Username:<br><input type="password" name="password"><br>
+<input type="submit" value="LOG IN">
+</form>
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+index.php
+
+<?php
+	if(isset($_POST['text'])){
+
+	$text = htmlentities($_POST['text']);
+
+	if(!empty($text)){
+	
+	echo $text;
+}else {
+
+	echo 'Please enter something';
+}
+}
+
+?>
+
+<br><br>
+<form action="index.php" method="POST">
+	
+	<input type="text" name="text">
+	<input type="submit" value="Submit">
+
+</form>
+
+<!--
+ if the below details type in web page input
+
+	<strong>CLICK HERE</strong>
+
+	<iframe src="www.facebook.com"></iframe>
+-->
+
+7.52
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+............................
+index.php
+
+<?php
+
+	echo '';
+
+
+?>
+
+.............................
+//if we delete index.php
+............................
+set.php
+
+<?php
+
+	session_start();
+	$_SESSION['name'] = 'Mahesh';
+?>
+
+............................
+view.php
+
+<?php
+	session_start(); 
+	echo $_SESSION['name'];
+
+?>
+
+............................
+zoom.php
+
+<?php
+	session_start(); 
+	echo $_SESSION['name'];
+
+?>
+
+8.7
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+set.php
+
+<?php
+
+	session_start();
+	$_SESSION['user'] = 'Mahesh';
+?>
+
+............................
+view.php
+
+<?php
+	session_start(); 
+	//echo $_SESSION['user'];
+	if(isset($_SESSION['user'])){
+	
+	echo 'Welcome, '.$_SESSION['user'];
+}else {
+	echo 'please log in';
+}
+
+	
+
+?>
+
+............................
+zoom.php
+
+<?php
+	session_start(); 
+	echo $_SESSION['user'];
+
+?>
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+// unset file
+
+set.php
+
+<?php
+
+	session_start();
+	$_SESSION['user'] = 'Mahesh';
+	$_SESSION['pass'] = '123123';
+?>
+
+............................
+view.php
+
+<?php
+	session_start(); 
+	//echo $_SESSION['user'];
+	if(isset($_SESSION['user'])){
+	
+	echo 'Welcome, '.$_SESSION['user'].'!<br>Your Password : '.$_SESSION['pass'];
+}else {
+	echo 'please log in';
+}
+
+	
+
+?>
+
+............................
+zoom.php
+
+<?php
+	session_start(); 
+	echo $_SESSION['user'];
+
+?>
+
+
+............................
+unset.php
+
+<?php
+	session_start(); 
+	
+	unset($_SESSION['user']);
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+// unset file
+
+set.php
+
+<?php
+
+	session_start();
+	$_SESSION['user'] = 'Mahesh';
+	$_SESSION['pass'] = '123123';
+?>
+
+............................
+view.php
+
+<?php
+	session_start(); 
+	
+	
+	echo $_SESSION['user'].' '.$_SESSION['pass'];
+
+
+	
+
+?>
+
+............................
+zoom.php
+
+<?php
+	session_start(); 
+	echo $_SESSION['user'];
+
+?>
+
+
+............................
+unset.php
+
+<?php
+	session_start(); 
+	
+	//unset($_SESSION['user']); instead below
+
+	session_destroy();
+?>
+
+8.25
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+..................................
+set.php
+
+<?php
+	setcookie('username', 'mahesh', time()+10);
+
+?>
+
+...................................
+view.php
+
+<?php
+
+	$_COOKIE['username'];
+?>
+
+...................................
+unset.php
+
+<?php
+
+	setcookie('username', 'mahesh', time()-10);
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+..................................
+file.php
+
+<?php
+	fopen('users.txt', 'w');
+	
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+<?php
+	fopen('users.txt', 'w');
+	fwrite(fopen('users.txt', 'w'), 'Mahesh');
+	
+?>
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+<?php
+	$file = fopen('users.txt', 'w');
+	fwrite($file, 'Mahesh');
+	
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+<?php
+	$file = fopen('users.txt', 'w');
+	fwrite($file, 'Krishna'."\n");
+	fwrite($file, 'Mahesh');
+	
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+<?php
+	$file = fopen('users.txt', 'w');
+	fwrite($file, 'Krishna'."\n");
+	fwrite($file, 'Mahesh');
+	fclose($file);
+	echo 'written';
+	
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+<?php
+	$file = fopen('users.txt', 'a');
+
+	//first write after write mahesh
+	fwrite($file, 'Krishna'."\n");
+	fclose($file);
+	echo 'written';
+	
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+<?php
+
+	if(isset($_POST['name'])){
+		
+	$name = $_POST['name'];
+		
+	if(!empty($name)){
+
+	$file = fopen('names.txt','a');
+	
+	fwrite($file, $name."\n");
+	
+	fclose($file);
+
+	echo 'Written';
+
+}else{
+	echo 'Please enter a name';
+
+}
+}
+	
+?>
+
+<form action = "file.php" method = "POST">
+	<input type="text" name="name">
+	<input type="submit" value="add">
+
+
+</form>
+
+8.57
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+<?php
+	echo '<h3>Current Names: </h3>';
+	$readin = file('names.txt');
+	$totalnames = count($readin);
+
+	$c = 1;
+	
+	foreach($readin as $newname){
+	echo trim($newname);
+	if($c < $totalnames){
+		echo ', ';
+}
+	$c++;	
+
+}
+
+	if(isset($_POST['name'])){
+		
+	$name = $_POST['name'];
+		
+	if(!empty($name)){
+
+	$file = fopen('names.txt','a');
+	
+	fwrite($file, $name."\n");
+	
+	fclose($file);
+
+	echo 'Written';
+
+}else{
+	echo 'Please enter a name';
+
+}
+}
+	
+?>
+
+<br><br>
+
+<form action = "file.php" method = "POST">
+	<input type="text" name="name">
+	<input type="submit" value="add">
+
+
+</form>
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+<?php
+
+	$file = fopen('names.txt', 'r');
+	echo fread($file, 20);
+
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+<?php
+
+	$filename = 'names.txt';
+	$file = fopen($filename, 'r');
+	$filesize = filesize($filename);
+
+	echo fread($file, $filesize);
+
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+<?php
+
+	$filename = 'names.txt';
+	$file = fopen($filename, 'r');
+	$filesize = filesize($filename);
+
+	$data = fread($file, $filesize);
+
+	echo '<br><br>';
+
+	$names_array = explode(',', $data);
+
+	foreach($names_array as $name){
+
+	echo $name.'<br>';	
+}
+
+?>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+<?php
+
+	$filename = 'names.txt';
+	$file = fopen($filename, 'r');
+	$filesize = filesize($filename);
+
+	$data = fread($file, $filesize);
+
+	echo '<br><br>';
+
+	$names_array = explode('-', $data);
+
+	foreach($names_array as $name){
+
+	echo $name.'<br>';	
+}
+
+?>
+
+
+
+9.33
+
+
+
+
+
+
+
+
+
+

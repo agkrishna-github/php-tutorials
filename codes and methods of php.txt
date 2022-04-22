@@ -1,0 +1,206 @@
+
+die();
+.................
+
+exit();
+..................
+
+exit(error something text);
+..................
+
+mysqli_connect('localhost','root','')
+....................
+
+mysqli_connect('localhost','root','aaa') || die('some message');
+........................
+
+@musqli_connet('localhost','root','aaa') || die('some message');
+...........................
+
+str_word_count($variable);
+...............................
+
+str_word_count($variable, 1, '.');
+...............................
+
+print_r($variable);
+...............................
+
+str_shuffle($variable);
+...............................
+
+str_shuffle('string');
+................................
+
+strlen($variable);
+............................
+
+substr('string', 0, strlen('string'));
+............................
+
+substr($shuffledT, 0, $t1/2);
+..........................
+
+similar_text($t1, $t2, $ress);
+..........................
+
+strrev($variable);
+...........................
+
+$stringEnt = htmlentities($string);
+
+......................
+
+$stringwithslashes = htmlentities(addslashes($string));
+............................
+
+echo stripslashes($stringwithslashes);
+..........................
+
+foreach($food as $f){
+
+	echo $f.'<br>';
+..........................
+
+echo '<strong>'.$f.'</strong> -- Rs. ';
+........................
+
+echo $students ['boys'][0];
+.........................
+
+require 'tcwpc/newinc.php';
+........................
+
+include_once 'include.php';
+.........................
+
+time();
+....................
+
+date('h:i:s', $time);
+........................
+
+date('D d M Y @ h:i:s', $time);
+.....................
+
+strtotime();
+.............................
+
+strtotime('+ 5 hours 30 minutes');
+..............................
+
+rand();
+..........................
+
+$max = getrandmax();
+...........................
+
+$sName = $_SERVER['SCRIPT_NAME'];
+............................
+
+echo $_SERVER['HTTP_HOST'];
+............................
+
+header('Location: http://www.facebook.com');
+..............................
+
+<?php ob_start(); ?>
+
+
+   ob_end_flush();
+?>
+..........................
+
+echo $_SERVER['REMOTE_ADDR'];
+..................
+
+foreach($ip_blocked as $ip){
+		
+		echo $ip.'<br>';
+}
+
+............................
+
+session_start();
+
+	$_SESSION['name'] = 'Mahesh';
+..............................
+
+unset($_SESSION['user']);
+.............................
+
+session_destroy();
+.............................
+
+setcookie('username', 'mahesh', time()+10);
+..............................
+
+$_COOKIE['username'];
+.................................
+
+setcookie('username', 'mahesh', time()-10);
+...............................
+
+fopen('users.txt', 'w');
+...............................
+
+fopen('users.txt', 'w');
+	fwrite(fopen('users.txt', 'w'), 'Mahesh');
+........................
+
+$filesize = filesize($filename);
+.......................
+
+$file = fopen('names.txt', 'r');
+	echo fread($file, 20);
+
+'''''''''''''''''''''''''''''''
+
+$readin = file('names.txt');
+...........................
+
+$totalnames = count($readin);
+......................
+
+$names_array = explode(',', $data);
+
+to remove separaters
+............................
+
+$maes_string = implode(', ', $names_array);
+...............................
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
